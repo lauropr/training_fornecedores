@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:core='sap.ui.core' xmlns="sap.m">
+	<f:SimpleForm xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns:f="sap.ui.layout.form" id="SimpleFormChangeColumn_oneGroup" editable="true" layout="ColumnLayout" columnsL="1" emptySpanL="2"
+		emptySpanM="2">
+		<f:content>
+			<Label xmlns="sap.m" text="ID"/>
+			<Input xmlns="sap.m" id="supplierId" value="{view>/id}" enabled="{view>/isAdd}"/>
+			<Label xmlns="sap.m" text="Name"/>
+			<Input xmlns="sap.m" id="name" value="{view>/name}" enabled="{view>/isAdd}"/>
+			<Label text="Concurrency"/>
+			<Slider value="{view>/concurrency}"/>
+			<StepInput value="{view>/concurrency}"/>
+			<Label xmlns="sap.m" text="Street/No."/>
+			<Input xmlns="sap.m" value="{view>/street}" enabled="{view>/isAdd}"/>
+			<Input xmlns="sap.m" value="{view>/streetNumber}" enabled="{view>/isAdd}">
+				<layoutData>
+					<f:ColumnElementData cellsSmall="2" cellsLarge="1"/>
+				</layoutData>
+			</Input>
+			<Label xmlns="sap.m" text="ZIP Code/City"/>
+			<Input xmlns="sap.m" value="{view>/zip}" enabled="{view>/isAdd}">
+				<layoutData>
+					<f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+				</layoutData>
+			</Input>
+			<Input xmlns="sap.m" value="{view>/city}"/>
+			<Label xmlns="sap.m" text="Country"/>
+			<Select xmlns="sap.m" id="country" selectedKey="{view>/country}" items="{country>/}" enabled="{view>/isAdd}">
+				<items>
+					<core:Item xmlns:core="sap.ui.core" text="{country>name}" key="{country>id}"/>
+				</items>
+			</Select>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>
